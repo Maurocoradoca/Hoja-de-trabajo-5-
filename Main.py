@@ -3,10 +3,10 @@ import random
 import statistics
 
 env = simpy.Environment()
-ram = simpy.Container(env, init=100, capacity=100)
+ram = simpy.Container(env, init=200, capacity=200)
 cpu = simpy.Resource(env, capacity=1)
 velocidadCpu = 3
-tiempoDeLlegada = 10
+tiempoDeLlegada = 1
 velocidad_global_cpu = 3 
 lista_tiempos = []
 
@@ -30,7 +30,7 @@ def proceso(env, nombre, ram_sistema, cpu_sistema, instrucciones_totales, memori
     print(f"T={env.now}: {nombre} termina (estuvo {tiempo_total} unidades)")
 
 def generar_procesos(env, ram_sistema, cpu_sistema):
-    for i in range(10):
+    for i in range(25):
         instrucciones = random.randint(1, 10)
         memoria = random.randint(1, 10)
         env.process(proceso(env, f"Proceso-{i+1}", ram_sistema, cpu_sistema, instrucciones, memoria))
