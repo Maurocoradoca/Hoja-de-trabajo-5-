@@ -4,10 +4,10 @@ import statistics
 
 env = simpy.Environment()
 ram = simpy.Container(env, init=100, capacity=100)
-cpu = simpy.Resource(env, capacity=1)
+cpu = simpy.Resource(env, capacity=2)
 velocidadCpu = 3
-tiempoDeLlegada = 10
-velocidad_global_cpu = 6 
+tiempoDeLlegada = 1
+velocidad_global_cpu = 3 
 lista_tiempos = []
 
 def proceso(env, nombre, ram_sistema, cpu_sistema, instrucciones_totales, memoria_necesaria):
